@@ -17,7 +17,6 @@ from omegaconf import DictConfig, OmegaConf
 
 import logging
 logger = logging.getLogger(__name__)
-
 class ESC50Dataset(torch.utils.data.Dataset):
     # Simple class to load the desired folders inside ESC-50
     
@@ -138,4 +137,6 @@ def train(cfg: DictConfig):
     trainer.fit(audionet, train_loader, val_loader)
 
 if __name__ == "__main__":
+
+    torchaudio.set_audio_backend(backend='soundfile')
     train()

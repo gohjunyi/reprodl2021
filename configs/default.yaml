@@ -19,5 +19,5 @@ trainer:
   max_epochs: 10
 
 defaults:
-- hydra/job_logging: colorlog
-- hydra/hydra_logging: colorlog
+- override hydra/job_logging: colorlog
+- override hydra/hydra_logging: colorlog
